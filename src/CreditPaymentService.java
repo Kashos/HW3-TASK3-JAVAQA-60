@@ -1,8 +1,7 @@
 public class CreditPaymentService {
-    public double calculate (int a, double b, int c) {
-
-        double argument = b / (100*12); // Процентная ставка в месяц
-        double result = a * ((argument*(Math.pow(1+argument, c)))/((Math.pow(1+argument, c))-1));
+    public double calculate(int amount, double Rate, int creditTerm) {
+        double monthlyRate = Rate / (100 * 12); // Процентная ставка в месяц
+        double result = amount * ((monthlyRate * (Math.pow(1 + monthlyRate, creditTerm))) / ((Math.pow(1 + monthlyRate, creditTerm)) - 1));
         return result;
     }
 }
